@@ -354,6 +354,30 @@ task-management/
 - Pagination and filtering for task retrieval.
 - Authentication and authorization.
 
+### Optional: Load Sample Data
+
+The project includes an optional SQL seed script to populate the database with sample tasks and task dependencies.
+
+**Seed file:** `database/seed.sql`
+
+You can execute it using either of the following approaches.
+
+**Local PostgreSQL:**
+
+```bash
+psql -U postgres -d taskDB -f database/seed.sql
+```
+
+**Docker Compose:**
+
+```bash
+docker compose exec -T postgres psql -U rohan -d taskDB < database/seed.sql
+```
+
+Alternatively, open the SQL file in pgAdmin's Query Tool and execute it.
+
+The seed script creates sample tasks with different statuses and demonstrates task dependency relationships. It is not executed automatically when the application starts.
+
 ## Author
 
 **Rohan Chowdhury**
